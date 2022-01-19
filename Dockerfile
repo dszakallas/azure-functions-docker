@@ -29,7 +29,7 @@ RUN . $BUILD_ENV/bin/activate && \
     -o requirements.txt \
     --without-hashes 
 
-RUN . $BUILD_ENV/bin/activate && pip install --no-cache -r requirements.txt
+RUN . $APP_PATH/bin/activate && pip install --no-cache -r requirements.txt
 
 FROM mcr.microsoft.com/azure-functions/python:3.0-python$PYTHON_VERSION_COMPAT as app
 ARG PYTHON_VERSION_COMPAT
